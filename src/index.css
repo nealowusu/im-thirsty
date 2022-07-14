@@ -1,13 +1,165 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --blue: #1904f2;
+  --blue-75: #5243f5;
+  --blue-50: #8c81f9;
+  --yellow: #ffef00;
+  --orange: #ff9a00;
+  --orange-75: #ffb340;
+  --orange-25: #ffe6bf;
+  --orange-10: #fff5e5;
+  --black-75: #404040;
+  --black-50: #808080;
+  --black-25: #bfbfbf;
+  --black-10: #e5e5e5;
+  --white: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans:wght@400;600&family=PT+Sans&family=Raleway&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: left;
+  font-family: "Lora", serif;
+  font-size: 6.7em;
+  line-height: 0.8em;
+  color: var(--blue);
+}
+
+.menu {
+  font-family: "Lora", serif;
+  font-size: 1.8em;
+}
+
+.subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+}
+
+.formlabel {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.85em;
+  text-align: center;
+}
+
+.selectlabel {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.85em;
+  text-align: center;
+  line-height: 1em;
+  margin-top: 1em;
+}
+
+.buttonCTA {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4em;
+}
+
+h1 {
+  font-family: "Lora", serif;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+body {
+  margin-top: 20px;
+  background-color: var(--orange-10);
+  font-family: "PT Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+nav {
+  padding: 0.5rem;
+  max-width: 390px;
+}
+
+.topHeader {
+  margin: auto;
+}
+
+.hamburgerIcon {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 20px;
+}
+
+main {
+  max-width: 390px;
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.button {
+  /* Button */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 19px 29px;
+  gap: 12px;
+
+  /* Greyscale/White */
+
+  background: #ffffff;
+  /* Accent/Orange */
+
+  border: 1px solid #ff9a00;
+  border-radius: 40px;
+}
+
+.gg-arrow-long-right {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: inset 0 0 0 1px;
+  width: 24px;
+  height: 4px;
+}
+
+.gg-arrow-long-right::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  right: 0;
+  bottom: -2px;
 }

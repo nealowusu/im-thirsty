@@ -1,18 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
 import Home from "./routes/Home";
-import Product from "./routes/Product";
+import Drink from "./routes/Drink";
 import Select from "./routes/Select";
+import { MenuContextProvider } from "./context/MenuContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/list' element={<Select />} />
-        <Route path='/drink/:id' element={<Product />} />
-      </Routes>
-    </BrowserRouter>
+    <MenuContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/list' element={<Select />} />
+          <Route path='/drink/:id' element={<Drink />} />
+        </Routes>
+      </BrowserRouter>
+    </MenuContextProvider>
   );
 }
 

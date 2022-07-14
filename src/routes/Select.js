@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DrinkForm from "../components/DrinkForm";
+import "./Select.css";
+import Hamburger from "hamburger-react";
 
 const Select = () => {
   const [selectType, setSelectType] = useState();
@@ -22,7 +24,28 @@ const Select = () => {
 
   return (
     <>
-      <DrinkForm selectType={selectType} setSelectType={setSelectType} />
+      <nav className='sideNav'>
+        <div className='sideNavHamburger'>
+          <Hamburger />
+        </div>
+      </nav>
+      <main>
+        <section>
+          <h1>What Should I Drink</h1>
+          <h4>Select Your Category</h4>
+        </section>
+        <section>
+          <form className='grid grid-cols-4 gap-4'>
+            <DrinkForm selectType={selectType} setSelectType={setSelectType} />
+          </form>
+        </section>
+        <section>
+          <h4>Add Your Ingredients</h4>
+        </section>
+        <section className='grid place-content-center '>
+          <div></div>
+        </section>
+      </main>
     </>
   );
 };

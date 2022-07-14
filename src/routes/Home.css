@@ -1,0 +1,20 @@
+.masthead {
+}
+
+.masthead .subtitle {
+  margin-top: 0.03em;
+  color: var(--blue-50);
+}
+
+.masthead img {
+  display: inline;
+  padding: 0px;
+  display: inline-block; /* used only to shrink wrap the div around the contents, has a default margin */
+  box-shadow: -12px 12px 0px 3px var(--yellow);
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.introcopy {
+  color: var(--blue);
+}

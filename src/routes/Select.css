@@ -1,0 +1,24 @@
+/* HIDE RADIO */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* IMAGE STYLES */
+[type="checkbox"] + img {
+  cursor: pointer;
+  background-color: var(--orange-25);
+  border: 4px solid var(--orange-25);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+/* CHECKED STYLES */
+[type="checkbox"]:checked + img {
+  cursor: pointer;
+  background-color: var(--orange);
+  border: 4px solid var(--orange);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
