@@ -50,6 +50,20 @@
   text-align: center;
 }
 
+.formdesc {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.85em;
+  color: var(--black-75);
+}
+
+label {
+  color: var(--black-50);
+}
+
+label:hover {
+  color: black;
+}
+
 .selectlabel {
   font-family: "Open Sans", sans-serif;
   font-size: 0.85em;
@@ -60,7 +74,9 @@
 
 .buttonCTA {
   font-family: "Raleway", sans-serif;
-  font-size: 1.4em;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: var(--black-75);
 }
 
 h1 {
@@ -68,12 +84,13 @@ h1 {
   font-size: 2rem;
   line-height: 2rem;
   margin-bottom: 10px;
+  color: var(--blue);
 }
 
 h2 {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 h3 {
@@ -84,7 +101,8 @@ h3 {
 h4 {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  color: var(--blue-50);
 }
 
 body {
@@ -98,6 +116,7 @@ body {
 nav {
   padding: 0.5rem;
   max-width: 390px;
+  z-index: 4;
 }
 
 .topHeader {
@@ -114,6 +133,7 @@ main {
   max-width: 390px;
   margin: auto;
   padding: 0.5rem;
+  z-index: 0;
 }
 
 .button {

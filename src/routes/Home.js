@@ -1,36 +1,32 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
-import Hamburger from "hamburger-react";
 import Menu from "../components/Menu";
 import mainheader from "../img/mainheader.png";
-import { MenuContext } from "../context/MenuContext";
+import Select from "../components/Select";
 
-const Home = (props) => {
-  const { isOpen, setIsOpen } = useContext(MenuContext);
+const Home = ({ listPage, setListPage, resultOutputs, setResultOutputs }) => {
   let navigate = useNavigate();
   const startDrinkSelect = (e) => {
     e.stopPropagation();
+    setListPage(
+      <Select
+        listPage={listPage}
+        setListPage={setListPage}
+        resultOutputs={resultOutputs}
+        setResultOutputs={setResultOutputs}
+      />
+    );
     navigate("/list");
   };
 
   return (
     <>
       <Menu />
-      <nav className='topHeader'>
-        <div className='hamburgerIcon'>
-          <Hamburger
-            color='#1904F2'
-            size={45}
-            toggled={isOpen}
-            toggle={setIsOpen}
-          />
-        </div>
-      </nav>
       <main>
         <section className='masthead'>
           <div className='grid grid-cols-2 gap-2'>
-            <div className=' mt-32 z-30'>
+            <div className=' mt-32 z-10'>
               <p className='title'>I'm Thirsty</p>
               <p className='subtitle'>DRINK GENERATOR</p>
             </div>
@@ -52,7 +48,8 @@ const Home = (props) => {
         <section className='grid place-content-center '>
           <div>
             <button className='button' onClick={(e) => startDrinkSelect(e)}>
-              Get Started<i className='gg-arrow-long-right'></i>
+              <span className='buttonCTA'>Get Started</span>
+              <i className='gg-arrow-long-right'></i>
             </button>
           </div>
         </section>

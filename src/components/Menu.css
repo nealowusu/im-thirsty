@@ -1,0 +1,47 @@
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.topShelf {
+  z-index: 80;
+}
+
+.menuTrue {
+  position: absolute;
+  width: 100%;
+  height: 428px;
+  left: 0px;
+  top: 0px;
+  z-index: 40;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  display: flex;
+  justify-content: center;
+
+  /* Primary/Blue */
+
+  background: #1904f2;
+}
+
+.menuTrue .menuItems {
+  margin-top: 3em;
+  font-family: Lora;
+  color: var(--yellow);
+  font-size: 28px;
+  line-height: 52px;
+}
+
+.menuFalse {
+  position: absolute;
+  width: 100%;
+  height: 428px;
+  left: 0px;
+  top: -428px;
+  /* Primary/Blue */
+
+  background: #1904f2;
+}

@@ -1,0 +1,12 @@
+.Results img {
+  width: 169px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: opacity(0.5) drop-shadow(0 0 0 #ff5e00);
+  z-index: 300;
+}
+
+.Results h3 {
+  color: white;
+}
