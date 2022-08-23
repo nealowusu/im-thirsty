@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Results.css";
 import Menu from "./Menu";
 import resultIMG from "../img/result_image_template.jpeg";
@@ -9,9 +10,17 @@ const Results = ({
   resultOutputs,
   setResultOutputs,
 }) => {
+  let navigate = useNavigate();
   useEffect(() => {
     console.log(resultOutputs);
   }, [resultOutputs]);
+
+  const [visible, setVisible] = useState(8);
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 4);
+  };
+
   return (
     <>
       <Menu />
@@ -19,31 +28,28 @@ const Results = ({
         <section>
           <h1>Results</h1>
           <div className='grid gap-4 grid-cols-2'>
-            <div className='Results'>
-              <div className='static'>
-                <img src={resultIMG} alt='Result'></img>
-                <div className='relative bottom-9 left-1.5'>
-                  <div>
-                    <h3>Blood Orange Wine</h3>
+            {resultOutputs?.slice(0, visible).map((results) => (
+              <div className='Results'>
+                <a href={`drink/${results.idDrink}`}>
+                  <div className='static'>
+                    <img src={results.strDrinkThumb} alt='Result'></img>
+                    <div>
+                      <div>
+                        <h3>{results.strDrink}</h3>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
-            </div>
-            <div className='Results'>
-              <img src={resultIMG} alt='Result'></img> Test
-            </div>
-            <div className='Results'>
-              <img src={resultIMG} alt='Result'></img> Test
-            </div>
-            <div className='Results'>
-              <img src={resultIMG} alt='Result'></img> Test
-            </div>
+            ))}
           </div>
         </section>
         <section className='grid place-content-center mt-12 '>
           <div>
             <button className='button'>
-              <span className='buttonCTA'>Load More</span>
+              <span className='buttonCTA' onClick={showMoreItems}>
+                Load More
+              </span>
             </button>
           </div>
         </section>

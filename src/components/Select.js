@@ -3,7 +3,6 @@ import CategoryType from "./CategoryType";
 import "./Select.css";
 import Menu from "./Menu";
 import IngredientsTags from "./IngredientTags";
-import Results from "./Results";
 
 const Select = ({ listPage, setListPage, resultOutputs, setResultOutputs }) => {
   const [categorySelects, setCategorySelects] = useState([]);
@@ -47,7 +46,13 @@ const Select = ({ listPage, setListPage, resultOutputs, setResultOutputs }) => {
           return v.strDrink === drinks.strDrink;
         });
       });
-      await setResultOutputs(filteredList);
+
+      if (ingredientDrinks.length === 0) {
+        await setResultOutputs(categoryDrinks);
+      } else {
+        await setResultOutputs(filteredList);
+      }
+
       setListPage("result");
     } catch (err) {
       console.error(err.message);

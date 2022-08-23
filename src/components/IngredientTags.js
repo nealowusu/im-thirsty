@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { isCompositeComponent } from "react-dom/test-utils";
 import Select from "react-select";
 
 const IngredientsTags = ({ ingredientSelects, setIngredientSelects }) => {
@@ -49,7 +48,6 @@ const IngredientsTags = ({ ingredientSelects, setIngredientSelects }) => {
       <Select
         options={listIngredients}
         styles={customStyles}
-        defaultInputValue={null}
         placeholder={"Start Typing.."}
         isMulti={true}
         onInputChange={(input) => {

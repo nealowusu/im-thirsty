@@ -28,7 +28,7 @@ const CategoryType = ({ categorySelects, setCategorySelects }) => {
       {categoryOptions &&
         categoryOptions.map((drinks, i) => {
           return (
-            <label>
+            <label key={i}>
               <input
                 onChange={selectCategory}
                 type='checkbox'

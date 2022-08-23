@@ -4,9 +4,9 @@
   object-fit: cover;
   border-radius: 10px;
   filter: opacity(0.5) drop-shadow(0 0 0 #ff5e00);
-  z-index: 300;
+  z-index: 0;
 }
 
 .Results h3 {
-  color: white;
+  color: blue;
 }

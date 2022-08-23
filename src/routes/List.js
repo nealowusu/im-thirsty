@@ -4,7 +4,7 @@ import Select from "../components/Select";
 import Results from "../components/Results";
 
 const List = ({ listPage, setListPage, resultOutputs, setResultOutputs }) => {
-  if (listPage == null) {
+  if (listPage === null) {
     return (
       <Select
         listPage={listPage}
